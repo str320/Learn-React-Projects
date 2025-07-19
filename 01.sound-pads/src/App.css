@@ -1,0 +1,30 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  color: aliceblue;
+}
+
+.pad-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 80px);
+  gap: 1.75rem;
+  margin: 2rem auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
