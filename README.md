@@ -6,14 +6,6 @@ A personal collection of small-to-medium React projects created for learning, ex
 
 Folder Project Name Description
 
-- 01.drum-pad Drum Pad:
-
-A simple interactive drum pad with sound playback, color feedback, and a record/playback feature.
-
-- 02.notes-app:
-
-Notes App Create, categorize, and prioritize notes with persistent UI and structured form validation.
-
 🛠 Technologies Used
 
 - React
