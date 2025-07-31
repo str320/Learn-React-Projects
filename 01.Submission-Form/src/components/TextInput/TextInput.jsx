@@ -1,4 +1,4 @@
-function Input({ id, label, type, placeholder, value, onChange }) {
+function TextInput({ id, label, type, placeholder, value, onChange }) {
   return (
     <>
       <label className="text-lg pl-2" htmlFor={id}>
@@ -16,4 +16,4 @@ function Input({ id, label, type, placeholder, value, onChange }) {
   );
 }
 
-export default Input;
+export default TextInput;

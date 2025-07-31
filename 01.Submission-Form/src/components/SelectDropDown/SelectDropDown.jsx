@@ -1,4 +1,4 @@
-function SelectDropDown() {
+function SelectDropdown() {
   return (
     <>
       <label htmlFor=""></label>
@@ -16,4 +16,4 @@ function SelectDropDown() {
   );
 }
 
-export default SelectDropDown;
+export default SelectDropdown;

@@ -1,6 +1,6 @@
-import Input from "../Input/Input";
-import Fieldset from "../Fieldset/Fieldset";
-import SelectDropDown from "../SelectDropDown/SelectDropDown";
+import Input from "../TextInput/TextInput";
+import RadioGroup from "../RadioGroup/RadioGroup";
+import SelectDropdown from "../SelectDropDown/SelectDropDown";
 import { useId, useState } from "react";
 
 function Form() {
@@ -88,7 +88,7 @@ function Form() {
           onChange={(e) => setContact(e.currentTarget.value)}
         />
         <div>
-          <Fieldset
+          <RadioGroup
             header="Gender*"
             id={radioMaleId}
             label="Male"
@@ -98,7 +98,7 @@ function Form() {
             checked={gender === "male"}
             onChange={(e) => setGender(e.currentTarget.value)}
           />
-          <Fieldset
+          <RadioGroup
             id={radioFemaleId}
             label="Female"
             type="radio"
@@ -107,7 +107,7 @@ function Form() {
             checked={gender === "female"}
             onChange={(e) => setGender(e.currentTarget.value)}
           />
-          <Fieldset
+          <RadioGroup
             id={radioOtherId}
             label="Other"
             type="radio"
@@ -118,7 +118,7 @@ function Form() {
           />
         </div>
         <div>
-          <Fieldset
+          <RadioGroup
             header="Your best subject*"
             id={subjectEnglishId}
             label="English"
@@ -127,7 +127,7 @@ function Form() {
             value={subject.english}
             onChange={() => onSubjectChange("english")}
           />
-          <Fieldset
+          <RadioGroup
             id={subjectMathId}
             label="Math"
             type="checkbox"
@@ -135,7 +135,7 @@ function Form() {
             value={subject.math}
             onChange={() => onSubjectChange("math")}
           />
-          <Fieldset
+          <RadioGroup
             id={subjectPhysicsId}
             label="Physics"
             type="checkbox"
@@ -161,7 +161,7 @@ function Form() {
           placeholder="Enter URL"
           onChange={(e) => setUrl(e.currentTarget.value)}
         />
-        <SelectDropDown />
+        <SelectDropdown />
       </form>
     </article>
   );

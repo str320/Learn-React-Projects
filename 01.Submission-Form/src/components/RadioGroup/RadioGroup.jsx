@@ -1,4 +1,4 @@
-function Fieldset({ label, header, id, name, type, value, onChange }) {
+function RadioGroup({ label, header, id, name, type, value, onChange }) {
   return (
     <>
       <fieldset className="inline">
@@ -16,4 +16,4 @@ function Fieldset({ label, header, id, name, type, value, onChange }) {
   );
 }
 
-export default Fieldset;
+export default RadioGroup;
