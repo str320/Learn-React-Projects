@@ -1,6 +1,9 @@
 import Input from "../TextInput/TextInput";
 import RadioGroup from "../RadioGroup/RadioGroup";
+import CheckboxGroup from "../CheckboxGroup/CheckboxGroup";
 import SelectDropdown from "../SelectDropDown/SelectDropDown";
+import FileUpload from "../FileUpload/FileUpload";
+import UrlUpload from "../UrlUpload/UrlUpload";
 import { useId, useState } from "react";
 
 function Form() {
@@ -52,8 +55,8 @@ function Form() {
       </h1>
       <form action="" method="GET" onSubmit={handleSubmit}>
         <Input
-          id={firstNameId}
           label="First Name*"
+          id={firstNameId}
           type="text"
           placeholder="Enter First Name"
           value={firstName}
@@ -61,8 +64,8 @@ function Form() {
           onChange={(e) => setFirstName(e.currentTarget.value)}
         />
         <Input
-          id={lastNameId}
           label="Last Name*"
+          id={lastNameId}
           type="text"
           placeholder="Enter Last Name"
           value={lastName}
@@ -70,8 +73,8 @@ function Form() {
           onChange={(e) => setLastName(e.currentTarget.value)}
         />
         <Input
-          id={emailId}
           label="Enter Email*"
+          id={emailId}
           type="email"
           placeholder="Enter email"
           value={email}
@@ -79,8 +82,8 @@ function Form() {
           onChange={(e) => setEmail(e.currentTarget.value)}
         />
         <Input
-          id={contactId}
           label="Contact*"
+          id={contactId}
           type="tel"
           placeholder="Enter Mobile Number"
           value={contact}
@@ -91,34 +94,34 @@ function Form() {
           <RadioGroup
             header="Gender*"
             id={radioMaleId}
-            label="Male"
             type="radio"
             name="gender"
             value="male"
             checked={gender === "male"}
             onChange={(e) => setGender(e.currentTarget.value)}
+            label="Male"
           />
           <RadioGroup
             id={radioFemaleId}
-            label="Female"
             type="radio"
             name="gender"
-            value="male"
+            value="female"
             checked={gender === "female"}
             onChange={(e) => setGender(e.currentTarget.value)}
+            label="Female"
           />
           <RadioGroup
             id={radioOtherId}
-            label="Other"
             type="radio"
             name="gender"
-            value="male"
+            value="other"
             checked={gender === "other"}
             onChange={(e) => setGender(e.currentTarget.value)}
+            label="Other"
           />
         </div>
         <div>
-          <RadioGroup
+          <CheckboxGroup
             header="Your best subject*"
             id={subjectEnglishId}
             label="English"
@@ -127,7 +130,7 @@ function Form() {
             value={subject.english}
             onChange={() => onSubjectChange("english")}
           />
-          <RadioGroup
+          <CheckboxGroup
             id={subjectMathId}
             label="Math"
             type="checkbox"
@@ -135,7 +138,7 @@ function Form() {
             value={subject.math}
             onChange={() => onSubjectChange("math")}
           />
-          <RadioGroup
+          <CheckboxGroup
             id={subjectPhysicsId}
             label="Physics"
             type="checkbox"
@@ -144,7 +147,7 @@ function Form() {
             onChange={() => onSubjectChange("physics")}
           />
         </div>
-        <Input
+        <FileUpload
           id={fileId}
           label="Upload File*"
           type="file"
@@ -152,7 +155,7 @@ function Form() {
           value={resume}
           onChange={(e) => setResume(e.currentTarget.files[0])}
         />
-        <Input
+        <UrlUpload
           id={urlId}
           label="Enter URL*"
           type="url"

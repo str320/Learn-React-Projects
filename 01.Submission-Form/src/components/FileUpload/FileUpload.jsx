@@ -1,4 +1,4 @@
-function TextInput({ label, id, type, placeholder, value, name, onChange }) {
+function FileUpload({ label, id, type, name, value, onChange }) {
   return (
     <>
       <label className="text-lg pl-2" htmlFor={id}>
@@ -8,13 +8,12 @@ function TextInput({ label, id, type, placeholder, value, name, onChange }) {
         className="w-full mb-2 p-2 block"
         id={id}
         type={type}
-        placeholder={placeholder}
-        value={value}
         name={name}
+        value={value}
         onChange={onChange}
       />
     </>
   );
 }
 
-export default TextInput;
+export default FileUpload;

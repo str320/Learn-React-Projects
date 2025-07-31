@@ -1,13 +1,4 @@
-function RadioGroup({
-  header,
-  id,
-  type,
-  name,
-  value,
-  checked,
-  onChange,
-  label,
-}) {
+function CheckboxGroup({ header, id, type, name, value, onChange, label }) {
   return (
     <>
       <fieldset className="inline">
@@ -17,7 +8,6 @@ function RadioGroup({
           type={type}
           name={name}
           value={value}
-          checked={checked}
           onChange={onChange}
         />
         <label htmlFor={id}>{label}</label>
@@ -26,4 +16,4 @@ function RadioGroup({
   );
 }
 
-export default RadioGroup;
+export default CheckboxGroup;
