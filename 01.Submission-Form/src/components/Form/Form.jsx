@@ -8,19 +8,7 @@ import selectOptions from "../../data.js";
 import { useId, useState } from "react";
 
 function Form() {
-  const firstNameId = useId();
-  const lastNameId = useId();
-  const emailId = useId();
-  const contactId = useId();
-  const radioMaleId = useId();
-  const radioFemaleId = useId();
-  const radioOtherId = useId();
-  const subjectEnglishId = useId();
-  const subjectMathId = useId();
-  const subjectPhysicsId = useId();
-  const fileId = useId();
-  const urlId = useId();
-  const selectId = useId();
+  const id = useId();
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -55,7 +43,7 @@ function Form() {
       <form action="" method="GET" onSubmit={handleSubmit}>
         <Input
           label="First Name*"
-          id={firstNameId}
+          id={`${id}-firstName`}
           type="text"
           placeholder="Enter First Name"
           value={firstName}
@@ -64,7 +52,7 @@ function Form() {
         />
         <Input
           label="Last Name*"
-          id={lastNameId}
+          id={`${id}-lastName`}
           type="text"
           placeholder="Enter Last Name"
           value={lastName}
@@ -73,7 +61,7 @@ function Form() {
         />
         <Input
           label="Enter Email*"
-          id={emailId}
+          id={`${id}-email`}
           type="email"
           placeholder="Enter email"
           value={email}
@@ -82,7 +70,7 @@ function Form() {
         />
         <Input
           label="Contact*"
-          id={contactId}
+          id={`${id}-contact`}
           type="tel"
           placeholder="Enter Mobile Number"
           value={contact}
@@ -92,7 +80,7 @@ function Form() {
         <div>
           <RadioGroup
             header="Gender*"
-            id={radioMaleId}
+            id={`${id}-male`}
             type="radio"
             name="gender"
             value="male"
@@ -101,7 +89,7 @@ function Form() {
             label="Male"
           />
           <RadioGroup
-            id={radioFemaleId}
+            id={`${id}-female`}
             type="radio"
             name="gender"
             value="female"
@@ -110,7 +98,7 @@ function Form() {
             label="Female"
           />
           <RadioGroup
-            id={radioOtherId}
+            id={`${id}-other`}
             type="radio"
             name="gender"
             value="other"
@@ -122,7 +110,7 @@ function Form() {
         <div>
           <CheckboxGroup
             header="Your best subject*"
-            id={subjectEnglishId}
+            id={`${id}-english`}
             type="checkbox"
             name="subject"
             value={subject.english}
@@ -130,7 +118,7 @@ function Form() {
             label="English"
           />
           <CheckboxGroup
-            id={subjectMathId}
+            id={`${id}-math`}
             type="checkbox"
             name="subject"
             value={subject.math}
@@ -138,7 +126,7 @@ function Form() {
             label="Math"
           />
           <CheckboxGroup
-            id={subjectPhysicsId}
+            id={`${id}-physics`}
             type="checkbox"
             name="subject"
             value={subject.physics}
@@ -148,7 +136,7 @@ function Form() {
         </div>
         <FileUpload
           label="Upload File*"
-          id={fileId}
+          id={`${id}-file`}
           type="file"
           name="file"
           value={resume}
@@ -156,7 +144,7 @@ function Form() {
         />
         <UrlUpload
           label="Enter URL*"
-          id={urlId}
+          id={`${id}-url`}
           type="url"
           name="url"
           value={url}
@@ -165,7 +153,7 @@ function Form() {
         />
         <SelectDropdown
           label="Choose your level"
-          id={selectId}
+          id={`${id}-select`}
           name="select"
           value={selectedOption}
           disabled={true}
