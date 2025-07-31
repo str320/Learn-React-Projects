@@ -4,6 +4,7 @@ import CheckboxGroup from "../CheckboxGroup/CheckboxGroup";
 import FileUpload from "../FileUpload/FileUpload";
 import UrlUpload from "../UrlUpload/UrlUpload";
 import SelectDropdown from "../SelectDropDown/SelectDropDown";
+import TextArea from "../TextArea/TextArea.jsx";
 import selectOptions from "../../data.js";
 import { useId, useState } from "react";
 
@@ -23,6 +24,7 @@ function Form() {
   const [resume, setResume] = useState("");
   const [url, setUrl] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
+  const [userText, setUserText] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -160,6 +162,15 @@ function Form() {
           onChange={(e) => setSelectedOption(e.currentTarget.value)}
           options={selectOptions}
         />
+        <TextArea
+          label="About"
+          id={`${id}-about`}
+          name="about"
+          value={userText}
+          placeholder="Write something about yourself"
+          onChange={(e) => setUserText(e.currentTarget.value)}
+        />
+        <div></div>
       </form>
     </article>
   );
