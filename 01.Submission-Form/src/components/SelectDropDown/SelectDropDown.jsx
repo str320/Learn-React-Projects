@@ -1,16 +1,28 @@
-function SelectDropdown() {
+function SelectDropdown({
+  label,
+  options,
+  name,
+  id,
+  value,
+  disabled,
+  onChange,
+}) {
   return (
     <>
-      <label htmlFor=""></label>
-      <select name="" id="">
-        <option value="" disabled selected="">
-          Click to select
+      <label htmlFor={id}>{label}</label>
+      <select name={name} id={id} value={value} onChange={onChange}>
+        <option value="" disabled={disabled}>
+          Select your answer
         </option>
-        <optgroup label="">
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-        </optgroup>
+        {options.map((group) => (
+          <optgroup label={group.label} key={group.label}>
+            {group.items.map((item) => (
+              <option value={item.value} key={item.value}>
+                {item.label}
+              </option>
+            ))}
+          </optgroup>
+        ))}
       </select>
     </>
   );

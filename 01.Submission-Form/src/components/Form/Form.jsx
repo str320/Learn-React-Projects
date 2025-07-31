@@ -1,9 +1,10 @@
 import Input from "../TextInput/TextInput";
 import RadioGroup from "../RadioGroup/RadioGroup";
 import CheckboxGroup from "../CheckboxGroup/CheckboxGroup";
-import SelectDropdown from "../SelectDropDown/SelectDropDown";
 import FileUpload from "../FileUpload/FileUpload";
 import UrlUpload from "../UrlUpload/UrlUpload";
+import SelectDropdown from "../SelectDropDown/SelectDropDown";
+import selectOptions from "../../data.js";
 import { useId, useState } from "react";
 
 function Form() {
@@ -11,18 +12,15 @@ function Form() {
   const lastNameId = useId();
   const emailId = useId();
   const contactId = useId();
-
   const radioMaleId = useId();
   const radioFemaleId = useId();
   const radioOtherId = useId();
-
   const subjectEnglishId = useId();
   const subjectMathId = useId();
   const subjectPhysicsId = useId();
-
   const fileId = useId();
-
   const urlId = useId();
+  const selectId = useId();
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -36,6 +34,7 @@ function Form() {
   });
   const [resume, setResume] = useState("");
   const [url, setUrl] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -124,47 +123,55 @@ function Form() {
           <CheckboxGroup
             header="Your best subject*"
             id={subjectEnglishId}
-            label="English"
             type="checkbox"
             name="subject"
             value={subject.english}
             onChange={() => onSubjectChange("english")}
+            label="English"
           />
           <CheckboxGroup
             id={subjectMathId}
-            label="Math"
             type="checkbox"
             name="subject"
             value={subject.math}
             onChange={() => onSubjectChange("math")}
+            label="Math"
           />
           <CheckboxGroup
             id={subjectPhysicsId}
-            label="Physics"
             type="checkbox"
             name="subject"
             value={subject.physics}
             onChange={() => onSubjectChange("physics")}
+            label="Physics"
           />
         </div>
         <FileUpload
-          id={fileId}
           label="Upload File*"
+          id={fileId}
           type="file"
           name="file"
           value={resume}
           onChange={(e) => setResume(e.currentTarget.files[0])}
         />
         <UrlUpload
-          id={urlId}
           label="Enter URL*"
+          id={urlId}
           type="url"
           name="url"
           value={url}
           placeholder="Enter URL"
           onChange={(e) => setUrl(e.currentTarget.value)}
         />
-        <SelectDropdown />
+        <SelectDropdown
+          label="Choose your level"
+          id={selectId}
+          name="select"
+          value={selectedOption}
+          disabled={true}
+          onChange={(e) => setSelectedOption(e.currentTarget.value)}
+          options={selectOptions}
+        />
       </form>
     </article>
   );
